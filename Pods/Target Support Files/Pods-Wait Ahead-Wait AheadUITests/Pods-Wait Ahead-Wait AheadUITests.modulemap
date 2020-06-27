@@ -1,0 +1,6 @@
+framework module Pods_Wait_Ahead_Wait_AheadUITests {
+  umbrella header "Pods-Wait Ahead-Wait AheadUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
