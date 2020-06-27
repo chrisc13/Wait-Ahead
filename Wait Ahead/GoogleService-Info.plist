@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>477702755182-klhd5p5kc8v0dd80mg70kd7cujeo1b8m.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.477702755182-klhd5p5kc8v0dd80mg70kd7cujeo1b8m</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDZipNp5LTp89kHSYJ0mGsP1nnkqfXm_o0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>477702755182</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.asu.Wait-Ahead</string>
+	<key>PROJECT_ID</key>
+	<string>swiftfirebase-75803</string>
+	<key>STORAGE_BUCKET</key>
+	<string>swiftfirebase-75803.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:477702755182:ios:807976417367ed6986a77f</string>
+	<key>DATABASE_URL</key>
+	<string>https://swiftfirebase-75803.firebaseio.com</string>
+</dict>
+</plist>

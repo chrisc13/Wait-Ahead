@@ -19,11 +19,12 @@ struct ContentView: View {
     var body: some View{
         Group {
             if(session.session != nil){
-                Text("Welcome back user")
+                
                 
                 Button(action: session.signOut){
-                    Text("Sign out")
+                    Text("Sign out")                    
                 }
+                HomeView()
             }else{
                 AuthView()
             }
