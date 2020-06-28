@@ -14,6 +14,10 @@
 		83BFD44E24A7C55200332C07 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83BFD44D24A7C55200332C07 /* GoogleService-Info.plist */; };
 		83BFD45024A7CFD300332C07 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BFD44F24A7CFD300332C07 /* HomeView.swift */; };
 		83BFD45224A7D89300332C07 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BFD45124A7D89300332C07 /* MapView.swift */; };
+		83BFD45424A847DD00332C07 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BFD45324A847DD00332C07 /* Coordinator.swift */; };
+		83BFD45624A848F700332C07 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BFD45524A848F700332C07 /* LocationManager.swift */; };
+		83BFD45824A854B900332C07 /* QueueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BFD45724A854B900332C07 /* QueueView.swift */; };
+		83BFD45A24A876C200332C07 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BFD45924A876C200332C07 /* ProfileView.swift */; };
 		83C0836124A6BAFC0040BFAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C0836024A6BAFC0040BFAB /* AppDelegate.swift */; };
 		83C0836324A6BAFC0040BFAB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C0836224A6BAFC0040BFAB /* SceneDelegate.swift */; };
 		83C0836524A6BAFC0040BFAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C0836424A6BAFC0040BFAB /* ViewController.swift */; };
@@ -50,6 +54,10 @@
 		83BFD44D24A7C55200332C07 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		83BFD44F24A7CFD300332C07 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		83BFD45124A7D89300332C07 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		83BFD45324A847DD00332C07 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		83BFD45524A848F700332C07 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		83BFD45724A854B900332C07 /* QueueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueView.swift; sourceTree = "<group>"; };
+		83BFD45924A876C200332C07 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		83C0835D24A6BAFC0040BFAB /* Wait Ahead.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wait Ahead.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		83C0836024A6BAFC0040BFAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83C0836224A6BAFC0040BFAB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +118,18 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		83BFD45B24A8883900332C07 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2983C36124A6F57B00A7DA4A /* AuthView.swift */,
+				83BFD44F24A7CFD300332C07 /* HomeView.swift */,
+				83BFD45124A7D89300332C07 /* MapView.swift */,
+				83BFD45724A854B900332C07 /* QueueView.swift */,
+				83BFD45924A876C200332C07 /* ProfileView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		83C0835424A6BAFC0040BFAB = {
 			isa = PBXGroup;
 			children = (
@@ -135,13 +155,13 @@
 		83C0835F24A6BAFC0040BFAB /* Wait Ahead */ = {
 			isa = PBXGroup;
 			children = (
+				83BFD45B24A8883900332C07 /* Views */,
 				83C0836024A6BAFC0040BFAB /* AppDelegate.swift */,
 				2983C35D24A6EAE500A7DA4A /* SessionStore.swift */,
 				83C0836224A6BAFC0040BFAB /* SceneDelegate.swift */,
 				2983C35F24A6F25F00A7DA4A /* ContentView.swift */,
-				2983C36124A6F57B00A7DA4A /* AuthView.swift */,
-				83BFD44F24A7CFD300332C07 /* HomeView.swift */,
-				83BFD45124A7D89300332C07 /* MapView.swift */,
+				83BFD45524A848F700332C07 /* LocationManager.swift */,
+				83BFD45324A847DD00332C07 /* Coordinator.swift */,
 				83C0836424A6BAFC0040BFAB /* ViewController.swift */,
 				83C0836624A6BAFC0040BFAB /* Main.storyboard */,
 				83C0836924A6BAFE0040BFAB /* Assets.xcassets */,
@@ -347,13 +367,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				83C0836524A6BAFC0040BFAB /* ViewController.swift in Sources */,
+				83BFD45824A854B900332C07 /* QueueView.swift in Sources */,
 				83BFD45224A7D89300332C07 /* MapView.swift in Sources */,
+				83BFD45624A848F700332C07 /* LocationManager.swift in Sources */,
+				83BFD45A24A876C200332C07 /* ProfileView.swift in Sources */,
 				83BFD45024A7CFD300332C07 /* HomeView.swift in Sources */,
 				2983C36024A6F25F00A7DA4A /* ContentView.swift in Sources */,
 				2983C36224A6F57B00A7DA4A /* AuthView.swift in Sources */,
 				83C0836124A6BAFC0040BFAB /* AppDelegate.swift in Sources */,
 				2983C35E24A6EAE500A7DA4A /* SessionStore.swift in Sources */,
 				83C0836324A6BAFC0040BFAB /* SceneDelegate.swift in Sources */,
+				83BFD45424A847DD00332C07 /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

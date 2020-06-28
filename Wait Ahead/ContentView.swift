@@ -20,10 +20,10 @@ struct ContentView: View {
         Group {
             if(session.session != nil){
                 
-                
-                Button(action: session.signOut){
-                    Text("Sign out")                    
-                }
+//
+//                Button(action: session.signOut){
+//                    Text("Sign out")
+//                }
                 HomeView()
             }else{
                 AuthView()
