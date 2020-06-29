@@ -10,6 +10,7 @@
 		2983C35E24A6EAE500A7DA4A /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2983C35D24A6EAE500A7DA4A /* SessionStore.swift */; };
 		2983C36024A6F25F00A7DA4A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2983C35F24A6F25F00A7DA4A /* ContentView.swift */; };
 		2983C36224A6F57B00A7DA4A /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2983C36124A6F57B00A7DA4A /* AuthView.swift */; };
+		29E3C1FC24A9839A00449A51 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E3C1FB24A9839A00449A51 /* DatabaseManager.swift */; };
 		512F10807B9323B77396DFC2 /* Pods_Wait_Ahead.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67D6E4AABB258094E70CC5CF /* Pods_Wait_Ahead.framework */; };
 		83BFD44E24A7C55200332C07 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83BFD44D24A7C55200332C07 /* GoogleService-Info.plist */; };
 		83BFD45024A7CFD300332C07 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BFD44F24A7CFD300332C07 /* HomeView.swift */; };
@@ -49,6 +50,7 @@
 		2983C35D24A6EAE500A7DA4A /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
 		2983C35F24A6F25F00A7DA4A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2983C36124A6F57B00A7DA4A /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		29E3C1FB24A9839A00449A51 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		5C809D5005A9779A2B4672B1 /* Pods-Wait Ahead.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wait Ahead.release.xcconfig"; path = "Target Support Files/Pods-Wait Ahead/Pods-Wait Ahead.release.xcconfig"; sourceTree = "<group>"; };
 		67D6E4AABB258094E70CC5CF /* Pods_Wait_Ahead.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wait_Ahead.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83BFD44D24A7C55200332C07 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				2983C35D24A6EAE500A7DA4A /* SessionStore.swift */,
 				83C0836224A6BAFC0040BFAB /* SceneDelegate.swift */,
 				2983C35F24A6F25F00A7DA4A /* ContentView.swift */,
+				29E3C1FB24A9839A00449A51 /* DatabaseManager.swift */,
 				83BFD45524A848F700332C07 /* LocationManager.swift */,
 				83BFD45324A847DD00332C07 /* Coordinator.swift */,
 				83C0836424A6BAFC0040BFAB /* ViewController.swift */,
@@ -368,6 +371,7 @@
 			files = (
 				83C0836524A6BAFC0040BFAB /* ViewController.swift in Sources */,
 				83BFD45824A854B900332C07 /* QueueView.swift in Sources */,
+				29E3C1FC24A9839A00449A51 /* DatabaseManager.swift in Sources */,
 				83BFD45224A7D89300332C07 /* MapView.swift in Sources */,
 				83BFD45624A848F700332C07 /* LocationManager.swift in Sources */,
 				83BFD45A24A876C200332C07 /* ProfileView.swift in Sources */,

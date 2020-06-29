@@ -72,6 +72,7 @@ struct SignInView: View {
 }
 
 struct SignUpView: View {
+    @State var name: String = ""
     @State var email: String = ""
     @State var password: String = ""
     @State var error: String = ""
@@ -96,6 +97,11 @@ struct SignUpView: View {
                 .foregroundColor(Color.gray)
             
             VStack(spacing: 18){
+                TextField("Name",text: $name)
+                                   .font(.system(size: 14))
+                               .padding(12)
+                                   .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color.gray,lineWidth: 1))
+                
                 TextField("Email address",text: $email)
                     .font(.system(size: 14))
                 .padding(12)

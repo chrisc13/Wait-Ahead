@@ -9,14 +9,20 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @EnvironmentObject var session: SessionStore
     var body: some View {
         VStack{
             Spacer()
             Text("My Profile")
             Spacer()
-            
+         
+            Button(action: session.signOut){
+                Text("Sign out").frame(minWidth: 0, maxWidth: .infinity)
+                    .frame(height: 50).foregroundColor(.white)
+                    .background(LinearGradient(gradient: Gradient(colors: [Color.blue,Color.purple]), startPoint: .leading, endPoint: .trailing))
+                .cornerRadius(5)
+            }
         }
-        
     }
     
 }

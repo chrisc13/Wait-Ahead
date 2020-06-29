@@ -6,8 +6,12 @@ target 'Wait Ahead' do
   use_frameworks!
 
   # Pods for Wait Ahead
+  pod 'Firebase/Core'
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
+  pod 'Firebase/Database'
+  pod 'Firebase/Storage'
 
-  
+
+
 end
