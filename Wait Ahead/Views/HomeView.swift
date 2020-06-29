@@ -32,8 +32,7 @@ struct HomeView: View {
                 ZStack{
                     //map
                     MapView()
-                        .edgesIgnoringSafeArea(.top)
-                        .frame(height: 500)
+                    .edgesIgnoringSafeArea(.top)
                     
                     //search bar
                     HStack {
@@ -65,7 +64,28 @@ struct HomeView: View {
                 }
                 
                 //card view
-                Text("Store Card here")
+                
+//                HStack {
+//                    Rectangle()
+//                    .fill(Color.white)
+//                    .frame(width: 100, height: 100)
+//                    VStack{
+//                        Text("Target")
+//                        Text("Wait Time: 10 min")
+//                        HStack{
+//                            Text("Check In")
+//                                .background(Color.blue)
+//                            Text("Offers")
+//                             .background(Color.orange)
+//                        }
+//
+//                    }
+//                }
+                
+                
+                Text("Store card here")
+                .padding(50)
+                
             }
             .tabItem {
                 Image("icons8-nearby-26").renderingMode(.template)

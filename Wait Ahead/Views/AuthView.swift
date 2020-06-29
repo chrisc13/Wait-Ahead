@@ -27,48 +27,74 @@ struct SignInView: View {
     
     var body: some View{
         VStack{
-            Text("Welcome Back!")
-                .font(.system(size: 32, weight: .heavy))
-            
-            Text("Sign in to continue")
-                .font(.system(size: 18, weight: .medium))
-                .foregroundColor(Color.gray)
-            
-            VStack(spacing: 18){
-                TextField("Email address", text: $email)
-                    .font(.system(size: 14))
-                .padding(12)
-                    .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color.gray,lineWidth: 1))
-                
-                SecureField("Password",text: $password)
-                    .font(.system(size: 14)).padding(12)
-                    .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color.gray,lineWidth: 1))
-            }
-            .padding(.vertical,64)
-            
-            Button(action: signIn) {
-                Text("Sign in").frame(minWidth: 0, maxWidth: .infinity)
-                    .frame(height: 50).foregroundColor(.white)
-                    .background(LinearGradient(gradient: Gradient(colors: [Color.blue,Color.purple]), startPoint: .leading, endPoint: .trailing))
-                .cornerRadius(5)
-            }
-            
-            if(error != ""){
-                Text(error).font(.system(size: 14, weight: .semibold)).foregroundColor(.red).padding()
-            }
-            
-            Spacer()
-            
-            NavigationLink(destination: SignUpView()){
-                HStack{
-                    Text("I am a new user").font(.system(size: 14, weight: .light)).foregroundColor(Color.blue)
-                    
-                    Text("Create an Account").font(.system(size: 14, weight: .semibold)).foregroundColor(Color.blue)
+            ZStack{
+                Color.init(UIColor(hue: 0.6556, saturation: 0.76, brightness: 0.44, alpha: 1.0))
+                    .edgesIgnoringSafeArea(.all)
+                //app name and text fields
+                VStack{
+                    Spacer()
+                    Text("wait ahead.")
+                        .padding(20)
+                        .font(.system(size: 32, weight: .heavy))
+                        .foregroundColor(.white)
+                    HStack(spacing: 10){
+                        Spacer()
+                        VStack(spacing: 10){
+                            HStack{
+                            Text("Email:")
+                            Spacer()
+                            }
+                            TextField("Enter Email Address", text: $email)
+                                .font(.system(size: 14))
+                                .padding(12)
+                                .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color.gray,lineWidth: 1))
+                            HStack{
+                            Text("Password:")
+                            Spacer()
+                            }
+                            SecureField("Enter Password",text: $password)
+                                .font(.system(size: 14)).padding(12)
+                                .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color.gray,lineWidth: 1))
+                        }
+                        .padding(20)
+                        .padding(.vertical, 10)
+                        .background(Color.white)
+                        .cornerRadius(5)
+                        Spacer()
+                    }.clipped()
+                        .shadow(color: .gray, radius: 10, x: 0, y: 5)
+                        .offset(y:50)
+                    .keyboardResponsive()
                 }
             }
+            //sign-in button and sign-up link
+            VStack{
+                Spacer()
+                Button(action: signIn) {
+                    Text("Sign in").frame(minWidth: 0, maxWidth: .infinity)
+                        .frame(height: 50).foregroundColor(.white)
+                        .background(Color.init(UIColor(hue: 0.6556, saturation: 0.76, brightness: 0.44, alpha: 1.0) ))
+                        .cornerRadius(5)
+                }.cornerRadius(25)
+                .clipped()
+                .shadow(color: .gray, radius: 10, x: 0, y: 5)
+                
+                if(error != ""){
+                    Text(error).font(.system(size: 12, weight: .semibold)).foregroundColor(.red)
+                        .offset(y:20)
+                        .multilineTextAlignment(.center)
+                }
+                Spacer()
+                NavigationLink(destination: SignUpView()){
+                    VStack{
+                        Text("Don't have an account? Start Here").font(.system(size: 16, weight: .light)).foregroundColor(Color.black)
+                            .padding()
+                    }
+                }
+            }.padding(.horizontal,32)
         }
-        .padding(.horizontal,32)
     }
+    
 }
 
 struct SignUpView: View {
@@ -89,38 +115,77 @@ struct SignUpView: View {
     }
     
     var body: some View{
+        
         VStack{
-            Text("Create Account")
-                .font(.system(size:32,weight:.heavy))
-            Text("Sing up to get started and skip the line").font(.system(size: 18,weight:.medium))
-                .foregroundColor(Color.gray)
-            
-            VStack(spacing: 18){
-                TextField("Email address",text: $email)
-                    .font(.system(size: 14))
-                .padding(12)
-                    .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color.gray,lineWidth: 1))
+            ZStack{
+                Color.init(UIColor(hue: 0.6556, saturation: 0.76, brightness: 0.44, alpha: 1.0))
+                    .edgesIgnoringSafeArea(.all)
+                //app name and text fields
+                VStack{
+                    Spacer()
+                    Text("wait ahead.")
+                        .padding(20)
+                        .font(.system(size: 32, weight: .heavy))
+                        .foregroundColor(.white)
+                    HStack(spacing: 10){
+                        Spacer()
+                        VStack(spacing: 10){
+                            HStack{
+                            Text("Email:")
+                            Spacer()
+                            }
+                            TextField("Email address", text: $email)
+                                .font(.system(size: 14))
+                                .padding(12)
+                                .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color.gray,lineWidth: 1))
+                            HStack{
+                            Text("Password:")
+                            Spacer()
+                            }
+                            SecureField("Password",text: $password)
+                                .font(.system(size: 14)).padding(12)
+                                .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color.gray,lineWidth: 1))
+                            HStack{
+                                Text("Confirm Password:")
+                                Spacer()
+                            }
+                            SecureField("Password",text: $password)
+                                .font(.system(size: 14)).padding(12)
+                                .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color.gray,lineWidth: 1))
+                        }
+                        .padding(20)
+                        .background(Color.white)
+                        .cornerRadius(5)
+                        Spacer()
+                    }.clipped()
+                        .shadow(color: .gray, radius: 10, x: 0, y: 5)
+                        .offset(y:50)
+                        
+                    .keyboardResponsive()
+                }
                 
-                SecureField("Password",text: $password)
-                                   .font(.system(size: 14)).padding(12)
-                                   .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color.gray,lineWidth: 1))
-            }.padding(.vertical, 64)
-            
-            Button(action: signUp){
-                Text("Create Account")
-                    .frame(minWidth:0,maxWidth: .infinity)
-                    .frame(height:50)
-                    .foregroundColor(.white)
-                    .background(LinearGradient(gradient: Gradient(colors: [Color.blue,Color.purple]), startPoint: .leading, endPoint: .trailing))
-                .cornerRadius(5)
             }
-            if (error != ""){
-                Text(error).font(.system(size:14,weight: .semibold)).foregroundColor(.red).padding()
-            }
-            
-            Spacer()
-            
-        }.padding(.horizontal,32)
+            //sign-in button and sign-up link
+            VStack{
+                Spacer()
+                Button(action: signUp) {
+                    Text("Create Account").frame(minWidth: 0, maxWidth: .infinity)
+                        .frame(height: 50).foregroundColor(.white)
+                        .background(Color.init(UIColor(hue: 0.6556, saturation: 0.76, brightness: 0.44, alpha: 1.0) ))
+                        .cornerRadius(5)
+                }.cornerRadius(25)
+                .clipped()
+                .shadow(color: .gray, radius: 10, x: 0, y: 5)
+                
+                if(error != ""){
+                    Text(error).font(.system(size: 12, weight: .semibold)).foregroundColor(.red)
+                        .offset(y:20)
+                        .multilineTextAlignment(.center)
+                }
+                Spacer()
+            }.padding(.horizontal,32)
+        }
+        
     }
 }
 
@@ -129,6 +194,7 @@ struct AuthView: View {
         NavigationView{
            SignInView()
         }
+        .accentColor(Color.gray)
     }
 }
 

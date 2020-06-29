@@ -11,6 +11,7 @@
 		2983C36024A6F25F00A7DA4A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2983C35F24A6F25F00A7DA4A /* ContentView.swift */; };
 		2983C36224A6F57B00A7DA4A /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2983C36124A6F57B00A7DA4A /* AuthView.swift */; };
 		512F10807B9323B77396DFC2 /* Pods_Wait_Ahead.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67D6E4AABB258094E70CC5CF /* Pods_Wait_Ahead.framework */; };
+		83A2842F24A9F57C0096E69B /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A2842E24A9F57C0096E69B /* Helper.swift */; };
 		83BFD44E24A7C55200332C07 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83BFD44D24A7C55200332C07 /* GoogleService-Info.plist */; };
 		83BFD45024A7CFD300332C07 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BFD44F24A7CFD300332C07 /* HomeView.swift */; };
 		83BFD45224A7D89300332C07 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BFD45124A7D89300332C07 /* MapView.swift */; };
@@ -51,6 +52,7 @@
 		2983C36124A6F57B00A7DA4A /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		5C809D5005A9779A2B4672B1 /* Pods-Wait Ahead.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wait Ahead.release.xcconfig"; path = "Target Support Files/Pods-Wait Ahead/Pods-Wait Ahead.release.xcconfig"; sourceTree = "<group>"; };
 		67D6E4AABB258094E70CC5CF /* Pods_Wait_Ahead.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wait_Ahead.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		83A2842E24A9F57C0096E69B /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		83BFD44D24A7C55200332C07 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		83BFD44F24A7CFD300332C07 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		83BFD45124A7D89300332C07 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				83C0836B24A6BAFE0040BFAB /* LaunchScreen.storyboard */,
 				83BFD44D24A7C55200332C07 /* GoogleService-Info.plist */,
 				83C0836E24A6BAFE0040BFAB /* Info.plist */,
+				83A2842E24A9F57C0096E69B /* Helper.swift */,
 			);
 			path = "Wait Ahead";
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 				2983C36224A6F57B00A7DA4A /* AuthView.swift in Sources */,
 				83C0836124A6BAFC0040BFAB /* AppDelegate.swift in Sources */,
 				2983C35E24A6EAE500A7DA4A /* SessionStore.swift in Sources */,
+				83A2842F24A9F57C0096E69B /* Helper.swift in Sources */,
 				83C0836324A6BAFC0040BFAB /* SceneDelegate.swift in Sources */,
 				83BFD45424A847DD00332C07 /* Coordinator.swift in Sources */,
 			);
