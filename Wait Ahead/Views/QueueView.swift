@@ -12,7 +12,7 @@ struct QueueView: View {
     var body: some View {
         VStack{
             
-        Text("My Queue")
+            Text("My Queue for Store Name").bold()
             
             GeometryReader{g in
                 
@@ -29,6 +29,12 @@ struct QueueView: View {
                 Image(systemName: "person.icloud")
                 Text(data[0].name).foregroundColor(data[0].color)
                    }
+        
+            HStack{
+                Text("Current offers").bold()
+                    }
+            Spacer()
+            
         }
 
     }
@@ -51,7 +57,7 @@ struct DrawShape: View {
             path.move(to: self.center)
             path.addArc(center: self.center, radius: 180, startAngle: .init(degrees: self.from()), endAngle: .init(degrees: self.to()), clockwise: false)
             
-        }.fill(data[index].color)
+            }.fill(data[index].color)
         
        
     }
@@ -101,8 +107,8 @@ struct Pie:Identifiable {
 
 var data = [
     
-    Pie(id: 0, percent: 20, name: "You", color: Color(UIColor.FlatColor.Yellow.Turbo)),
-    Pie(id: 1, percent: 80, name: "OTher", color: Color(UIColor.FlatColor.Green.Fern))
+    Pie(id: 0, percent: 20, name: "You", color: Color(UIColor.FlatColor.Violet.BlueGem)),
+    Pie(id: 1, percent: 80, name: "OTher", color: Color(UIColor.FlatColor.Blue.Denim))
    
 ]
 
