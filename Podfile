@@ -8,6 +8,7 @@ target 'Wait Ahead' do
   # Pods for Wait Ahead
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
+  pod 'Alamofire', '~> 5.2'
 
   
 end

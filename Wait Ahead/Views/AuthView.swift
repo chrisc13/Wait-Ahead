@@ -7,6 +7,9 @@
 //
 
 import SwiftUI
+import Alamofire
+
+//{"username":"sonia","password":"sonia"}
 
 struct SignInView: View {
     @State var email: String = ""
@@ -15,14 +18,37 @@ struct SignInView: View {
     @EnvironmentObject var session: SessionStore
     
     func signIn(){
-        session.signIn(email: email, password: password){ (result, error) in
-            if let error = error {
-                self.error = error.localizedDescription
-            }else{
-                self.email = ""
-                self.password = ""
-            }
+        var testUser : [String: String] = [ "username" : self.email, "password" : self.password  ]
+        
+         //let url = URL(string: "http://localhost:8080/login")
+        
+         //guard let requestUrl = url else { fatalError() }
+        // Prepare URL Request Object
+        //var request = URLRequest(url: requestUrl)
+        //request.httpMethod = "POST"
+         
+        // HTTP Request Parameters which will be sent in HTTP Request Body
+        //let postString = "username="+self.email+"&password="+self.password;
+        let json: [String: Any] = ["username": self.email,
+                                   "password": self.password]
+
+        //let jsonData = try? JSONSerialization.data(withJSONObject: json)
+        AF.request("http://localhost:8080/login", method: .post, parameters: json, encoding: JSONEncoding.default)
+        .responseJSON { response in
+            print(response)
+        //}
+        // Set HTTP Request Body
+        //request.httpBody = jsonData;
+
+        //let task = URLSession.shared.dataTask(with: request) { data, response, error in
+
+          //guard let data = data, error == nil else { return }
+
+            
+          //print(NSString(data: data, encoding: String.Encoding.utf8.rawValue))
+        //}
         }
+        //task.resume();
     }
     
     var body: some View{
