@@ -16,9 +16,6 @@ struct HomeView: View {
     
     var body: some View {
         NavigationView {
-            
-            
-            
         
         TabView(selection:$selection)  {
             QueueView()

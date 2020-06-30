@@ -100,19 +100,35 @@ struct SignInView: View {
 struct SignUpView: View {
     @State var email: String = ""
     @State var password: String = ""
+    @State var confrimPassword: String = ""
     @State var error: String = ""
     @EnvironmentObject var session: SessionStore
     
-    func signUp() {
-        session.signUp(email: email, password: password) { (result,error) in
-            if let error = error {
-                self.error = error.localizedDescription
-            }else{
-                self.email=""
-                self.password=""
-            }
-        }
-    }
+//    func signUp() {
+//        if (!isFormValid()){
+//            self.error = "Passwords do not match"
+//        }else{
+//            session.signUp(email: email, password: password) { (result,error) in
+//                if let error = error {
+//                    self.error = error.localizedDescription
+//                }else{
+//                    self.email=""
+//                    self.password=""
+//                }
+//            }
+//        }
+//    }
+//    
+//    
+//    
+//    
+//    func isFormValid() -> Bool{
+//        if (password != confrimPassword){
+//            return false
+//        }else{
+//            return true
+//        }
+//    }
     
     var body: some View{
         
@@ -124,7 +140,7 @@ struct SignUpView: View {
                 VStack{
                     Spacer()
                     Text("wait ahead.")
-                        .padding(20)
+                        .padding()
                         .font(.system(size: 32, weight: .heavy))
                         .foregroundColor(.white)
                     HStack(spacing: 10){
@@ -134,7 +150,7 @@ struct SignUpView: View {
                             Text("Email:")
                             Spacer()
                             }
-                            TextField("Email address", text: $email)
+                            TextField("Enter an Email Address", text: $email)
                                 .font(.system(size: 14))
                                 .padding(12)
                                 .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color.gray,lineWidth: 1))
@@ -142,16 +158,17 @@ struct SignUpView: View {
                             Text("Password:")
                             Spacer()
                             }
-                            SecureField("Password",text: $password)
-                                .font(.system(size: 14)).padding(12)
+                            TextField("Choose a Password", text: $password)
+                                .font(.system(size: 14))
+                                .padding(12)
                                 .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color.gray,lineWidth: 1))
-                            HStack{
-                                Text("Confirm Password:")
-                                Spacer()
-                            }
-                            SecureField("Password",text: $password)
-                                .font(.system(size: 14)).padding(12)
-                                .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color.gray,lineWidth: 1))
+//                            HStack{
+//                                Text("Confirm Password:")
+//                                Spacer()
+//                            }
+//                            SecureField("Password",text: $confrimPassword)
+//                                .font(.system(size: 14)).padding(12)
+//                                .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color.gray,lineWidth: 1))
                         }
                         .padding(20)
                         .background(Color.white)
@@ -166,14 +183,28 @@ struct SignUpView: View {
                 
             }
             //sign-in button and sign-up link
-            VStack{
+            VStack (spacing: 10){
                 Spacer()
-                Button(action: signUp) {
-                    Text("Create Account").frame(minWidth: 0, maxWidth: .infinity)
-                        .frame(height: 50).foregroundColor(.white)
-                        .background(Color.init(UIColor(hue: 0.6556, saturation: 0.76, brightness: 0.44, alpha: 1.0) ))
-                        .cornerRadius(5)
-                }.cornerRadius(25)
+                
+                NavigationLink(destination: CustomerRegistration(email: self.$email, password: self.$password, firstName: "", lastName: "", cardInfo: "" ) ) {
+                          Text("Continue").frame(minWidth: 0, maxWidth: .infinity)
+                           .frame(height: 50).foregroundColor(.white)
+                           .background(Color.init(UIColor(hue: 0.6556, saturation: 0.76, brightness: 0.44, alpha: 1.0) ))
+                           .cornerRadius(5)
+                   }.cornerRadius(25)
+                .clipped()
+                .shadow(color: .gray, radius: 10, x: 0, y: 5)
+                .disabled(self.email.isEmpty || self.password.isEmpty )
+                
+                
+                
+                //Missing arguments for parameters 'isMerchant', 'merchantId', 'storeId', 'maxCapacity', 'maxAllowingCpapacity', 'avgServiceTime' in call
+                NavigationLink(destination: MerchantRegistration(email: self.$email, password: self.$password, merchantName: "", storeId: nil, maxCapacity: nil, maxAllowingCapacity: nil, avgServiceTime: nil ) ) {
+                          Text("Register as Merchant").frame(minWidth: 0, maxWidth: .infinity)
+                           .frame(height: 50).foregroundColor(.white)
+                           .background(Color.init(UIColor(hue: 0, saturation: 0, brightness: 0.33, alpha: 1.0) ))
+                           .cornerRadius(5)
+                   }.cornerRadius(25)
                 .clipped()
                 .shadow(color: .gray, radius: 10, x: 0, y: 5)
                 
@@ -183,6 +214,7 @@ struct SignUpView: View {
                         .multilineTextAlignment(.center)
                 }
                 Spacer()
+                
             }.padding(.horizontal,32)
         }
         
@@ -203,3 +235,13 @@ struct AuthView_Previews: PreviewProvider {
         AuthView().environmentObject(SessionStore())
     }
 }
+
+
+//NavigationLink(destination: CustomerRegistration(email: self.email) ) {
+//          Text("Register as Merchant").frame(minWidth: 0, maxWidth: .infinity)
+//           .frame(height: 50).foregroundColor(.white)
+//           .background(Color.init(UIColor(hue: 0.6556, saturation: 0.76, brightness: 0.44, alpha: 1.0) ))
+//           .cornerRadius(5)
+//   }.cornerRadius(25)
+//.clipped()
+//.shadow(color: .gray, radius: 10, x: 0, y: 5)
