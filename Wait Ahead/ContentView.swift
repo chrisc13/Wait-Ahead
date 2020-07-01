@@ -10,21 +10,38 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var session: SessionStore
+    @EnvironmentObject var mysession: SessionStore
+    
+    @EnvironmentObject var userAuth: UserAuth
     
     func getUser(){
         session.listen()
+    }
+    
+    
+    
+    func getAuthUser(){
+        
         
     }
     
     var body: some View{
         Group {
-            if(session.session != nil){
-                HomeView()
-            }else{
-                AuthView()
-                //MerchantHomeView()
-            }
-        }.onAppear(perform: getUser)
+            if (self.userAuth.isLoggedin) {
+                 AuthView()
+             } else {
+                 HomeView()
+             }
+        }
+            
+//
+//            if(userAuth != nil){
+//                HomeView()
+//            }else{
+//                AuthView()
+//                //MerchantHomeView()
+//            }
+//        }.onAppear(perform: getUser)
     }
 }
 

@@ -23,20 +23,16 @@ struct SignInView: View {
     @State var password: String = ""
     @State var error: String = ""
     @EnvironmentObject var session: SessionStore
+     @EnvironmentObject var userAuth: UserAuth
+    //@State var login: Bool
+    
     
     
     func signIn(){
         var testUser : [String: String] = [ "username" : self.email, "password" : self.password  ]
         
-         //let url = URL(string: "http://localhost:8080/login")
         
-         //guard let requestUrl = url else { fatalError() }
-        // Prepare URL Request Object
-        //var request = URLRequest(url: requestUrl)
-        //request.httpMethod = "POST"
-         
-        // HTTP Request Parameters which will be sent in HTTP Request Body
-        //let postString = "username="+self.email+"&password="+self.password;
+        
         let json: [String: Any] = ["username": self.email,
                                    "password": self.password]
 
@@ -44,43 +40,12 @@ struct SignInView: View {
         AF.request("http://localhost:8080/login", method: .post, parameters: json, encoding: JSONEncoding.default)
         .responseJSON { response in
             print(response)
-        //}
-        // Set HTTP Request Body
-        //request.httpBody = jsonData;
-
-        //let task = URLSession.shared.dataTask(with: request) { data, response, error in
-
-          //guard let data = data, error == nil else { return }
-
             
-          //print(NSString(data: data, encoding: String.Encoding.utf8.rawValue))
-        //}
+            self.userAuth.login()
+//            print(userAuth.)
         }
-        //task.resume();
     }
-    
-    func apiSignIn(){
-        print(self.email)
-        print(self.password)
-        
-//        guard let url = URL(string:"") else {
-//            fatalError("erroe getiing login url")
-//        }
-//        let session = URLSession.shared
-//        session.dataTask(with: url) { (data, response, erros) in
-//            <#code#>
-//        }
-//
-       guard let url = URL(string: "http://www.stackoverflow.com") else { return }
-
-       let task = URLSession.shared.dataTask(with: url) { data, response, error in
-
-         guard let data = data, error == nil else { return }
-
-         print(NSString(data: data, encoding: String.Encoding.utf8.rawValue))
-       }
-        task.resume()
-    }
+  
     
     var body: some View{
         VStack{
@@ -98,10 +63,10 @@ struct SignInView: View {
                         Spacer()
                         VStack(spacing: 10){
                             HStack{
-                            Text("Email:")
+                            Text("Username:")
                             Spacer()
                             }
-                            TextField("Enter Email Address", text: $email)
+                            TextField("Enter Username", text: $email)
                                 .font(.system(size: 14))
                                 .padding(12)
                                 .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color.gray,lineWidth: 1))
@@ -127,7 +92,7 @@ struct SignInView: View {
             //sign-in button and sign-up link
             VStack{
                 Spacer()
-                Button(action: apiSignIn) {
+                Button(action: signIn) {
                     Text("Sign in").frame(minWidth: 0, maxWidth: .infinity)
                         .frame(height: 50).foregroundColor(.white)
                         .background(Color.init(UIColor(hue: 0.6556, saturation: 0.76, brightness: 0.44, alpha: 1.0) ))

@@ -14,6 +14,7 @@
 		8389249324AC153900B38D51 /* MerchantHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389249224AC153900B38D51 /* MerchantHomeView.swift */; };
 		8389249524AC186B00B38D51 /* MerchantOffersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389249424AC186B00B38D51 /* MerchantOffersView.swift */; };
 		8389249A24AC1D9600B38D51 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389249924AC1D9600B38D51 /* Customer.swift */; };
+		8389249C24AC3A0400B38D51 /* UserAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389249B24AC3A0400B38D51 /* UserAuth.swift */; };
 		83A0CBC624ABBA5400CEE2EC /* CustomerRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A0CBC524ABBA5400CEE2EC /* CustomerRegistration.swift */; };
 		83A0CBC824ABC64200CEE2EC /* MerchantRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A0CBC724ABC64200CEE2EC /* MerchantRegistration.swift */; };
 		83A2842F24A9F57C0096E69B /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A2842E24A9F57C0096E69B /* Helper.swift */; };
@@ -60,6 +61,7 @@
 		8389249224AC153900B38D51 /* MerchantHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantHomeView.swift; sourceTree = "<group>"; };
 		8389249424AC186B00B38D51 /* MerchantOffersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantOffersView.swift; sourceTree = "<group>"; };
 		8389249924AC1D9600B38D51 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
+		8389249B24AC3A0400B38D51 /* UserAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuth.swift; sourceTree = "<group>"; };
 		83A0CBC524ABBA5400CEE2EC /* CustomerRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerRegistration.swift; sourceTree = "<group>"; };
 		83A0CBC724ABC64200CEE2EC /* MerchantRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantRegistration.swift; sourceTree = "<group>"; };
 		83A2842E24A9F57C0096E69B /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				8389249924AC1D9600B38D51 /* Customer.swift */,
+				8389249B24AC3A0400B38D51 /* UserAuth.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				2983C36224A6F57B00A7DA4A /* AuthView.swift in Sources */,
 				83C0836124A6BAFC0040BFAB /* AppDelegate.swift in Sources */,
 				2983C35E24A6EAE500A7DA4A /* SessionStore.swift in Sources */,
+				8389249C24AC3A0400B38D51 /* UserAuth.swift in Sources */,
 				83A0CBC624ABBA5400CEE2EC /* CustomerRegistration.swift in Sources */,
 				83A0CBC824ABC64200CEE2EC /* MerchantRegistration.swift in Sources */,
 				83A2842F24A9F57C0096E69B /* Helper.swift in Sources */,
