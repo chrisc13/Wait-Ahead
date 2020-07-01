@@ -11,11 +11,19 @@ import Alamofire
 
 //{"username":"sonia","password":"sonia"}
 
+struct ToDo: Decodable {
+    let email: String
+    let password: String
+    
+    
+}
+
 struct SignInView: View {
     @State var email: String = ""
     @State var password: String = ""
     @State var error: String = ""
     @EnvironmentObject var session: SessionStore
+    
     
     func signIn(){
         var testUser : [String: String] = [ "username" : self.email, "password" : self.password  ]
@@ -49,6 +57,29 @@ struct SignInView: View {
         //}
         }
         //task.resume();
+    }
+    
+    func apiSignIn(){
+        print(self.email)
+        print(self.password)
+        
+//        guard let url = URL(string:"") else {
+//            fatalError("erroe getiing login url")
+//        }
+//        let session = URLSession.shared
+//        session.dataTask(with: url) { (data, response, erros) in
+//            <#code#>
+//        }
+//
+       guard let url = URL(string: "http://www.stackoverflow.com") else { return }
+
+       let task = URLSession.shared.dataTask(with: url) { data, response, error in
+
+         guard let data = data, error == nil else { return }
+
+         print(NSString(data: data, encoding: String.Encoding.utf8.rawValue))
+       }
+        task.resume()
     }
     
     var body: some View{
@@ -96,7 +127,7 @@ struct SignInView: View {
             //sign-in button and sign-up link
             VStack{
                 Spacer()
-                Button(action: signIn) {
+                Button(action: apiSignIn) {
                     Text("Sign in").frame(minWidth: 0, maxWidth: .infinity)
                         .frame(height: 50).foregroundColor(.white)
                         .background(Color.init(UIColor(hue: 0.6556, saturation: 0.76, brightness: 0.44, alpha: 1.0) ))
@@ -211,8 +242,8 @@ struct SignUpView: View {
             //sign-in button and sign-up link
             VStack (spacing: 10){
                 Spacer()
-                
-                NavigationLink(destination: CustomerRegistration(email: self.$email, password: self.$password, firstName: "", lastName: "", cardInfo: "" ) ) {
+                //Missing arguments for parameters 'username', 'hasVisaCard', 'phone' in call
+                NavigationLink(destination: CustomerRegistration(email: self.$email, password: self.$password, firstName: "", lastName: "", cardInfo: "", username: "", hasVisaCard: false, phone: "" ) ) {
                           Text("Continue").frame(minWidth: 0, maxWidth: .infinity)
                            .frame(height: 50).foregroundColor(.white)
                            .background(Color.init(UIColor(hue: 0.6556, saturation: 0.76, brightness: 0.44, alpha: 1.0) ))
@@ -271,3 +302,6 @@ struct AuthView_Previews: PreviewProvider {
 //   }.cornerRadius(25)
 //.clipped()
 //.shadow(color: .gray, radius: 10, x: 0, y: 5)
+
+
+

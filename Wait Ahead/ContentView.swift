@@ -22,6 +22,7 @@ struct ContentView: View {
                 HomeView()
             }else{
                 AuthView()
+                //MerchantHomeView()
             }
         }.onAppear(perform: getUser)
     }

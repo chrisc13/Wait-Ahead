@@ -11,6 +11,9 @@
 		2983C36024A6F25F00A7DA4A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2983C35F24A6F25F00A7DA4A /* ContentView.swift */; };
 		2983C36224A6F57B00A7DA4A /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2983C36124A6F57B00A7DA4A /* AuthView.swift */; };
 		512F10807B9323B77396DFC2 /* Pods_Wait_Ahead.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67D6E4AABB258094E70CC5CF /* Pods_Wait_Ahead.framework */; };
+		8389249324AC153900B38D51 /* MerchantHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389249224AC153900B38D51 /* MerchantHomeView.swift */; };
+		8389249524AC186B00B38D51 /* MerchantOffersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389249424AC186B00B38D51 /* MerchantOffersView.swift */; };
+		8389249A24AC1D9600B38D51 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389249924AC1D9600B38D51 /* Customer.swift */; };
 		83A0CBC624ABBA5400CEE2EC /* CustomerRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A0CBC524ABBA5400CEE2EC /* CustomerRegistration.swift */; };
 		83A0CBC824ABC64200CEE2EC /* MerchantRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A0CBC724ABC64200CEE2EC /* MerchantRegistration.swift */; };
 		83A2842F24A9F57C0096E69B /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A2842E24A9F57C0096E69B /* Helper.swift */; };
@@ -54,6 +57,9 @@
 		2983C36124A6F57B00A7DA4A /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		5C809D5005A9779A2B4672B1 /* Pods-Wait Ahead.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wait Ahead.release.xcconfig"; path = "Target Support Files/Pods-Wait Ahead/Pods-Wait Ahead.release.xcconfig"; sourceTree = "<group>"; };
 		67D6E4AABB258094E70CC5CF /* Pods_Wait_Ahead.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wait_Ahead.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8389249224AC153900B38D51 /* MerchantHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantHomeView.swift; sourceTree = "<group>"; };
+		8389249424AC186B00B38D51 /* MerchantOffersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantOffersView.swift; sourceTree = "<group>"; };
+		8389249924AC1D9600B38D51 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		83A0CBC524ABBA5400CEE2EC /* CustomerRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerRegistration.swift; sourceTree = "<group>"; };
 		83A0CBC724ABC64200CEE2EC /* MerchantRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantRegistration.swift; sourceTree = "<group>"; };
 		83A2842E24A9F57C0096E69B /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
@@ -124,6 +130,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		8389249624AC1D7200B38D51 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8389249924AC1D9600B38D51 /* Customer.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		83BFD45B24A8883900332C07 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +148,8 @@
 				83BFD45924A876C200332C07 /* ProfileView.swift */,
 				83A0CBC524ABBA5400CEE2EC /* CustomerRegistration.swift */,
 				83A0CBC724ABC64200CEE2EC /* MerchantRegistration.swift */,
+				8389249224AC153900B38D51 /* MerchantHomeView.swift */,
+				8389249424AC186B00B38D51 /* MerchantOffersView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -163,6 +179,7 @@
 		83C0835F24A6BAFC0040BFAB /* Wait Ahead */ = {
 			isa = PBXGroup;
 			children = (
+				8389249624AC1D7200B38D51 /* Model */,
 				83BFD45B24A8883900332C07 /* Views */,
 				83C0836024A6BAFC0040BFAB /* AppDelegate.swift */,
 				2983C35D24A6EAE500A7DA4A /* SessionStore.swift */,
@@ -382,12 +399,15 @@
 				83BFD45A24A876C200332C07 /* ProfileView.swift in Sources */,
 				83BFD45024A7CFD300332C07 /* HomeView.swift in Sources */,
 				2983C36024A6F25F00A7DA4A /* ContentView.swift in Sources */,
+				8389249324AC153900B38D51 /* MerchantHomeView.swift in Sources */,
 				2983C36224A6F57B00A7DA4A /* AuthView.swift in Sources */,
 				83C0836124A6BAFC0040BFAB /* AppDelegate.swift in Sources */,
 				2983C35E24A6EAE500A7DA4A /* SessionStore.swift in Sources */,
 				83A0CBC624ABBA5400CEE2EC /* CustomerRegistration.swift in Sources */,
 				83A0CBC824ABC64200CEE2EC /* MerchantRegistration.swift in Sources */,
 				83A2842F24A9F57C0096E69B /* Helper.swift in Sources */,
+				8389249524AC186B00B38D51 /* MerchantOffersView.swift in Sources */,
+				8389249A24AC1D9600B38D51 /* Customer.swift in Sources */,
 				83C0836324A6BAFC0040BFAB /* SceneDelegate.swift in Sources */,
 				83BFD45424A847DD00332C07 /* Coordinator.swift in Sources */,
 			);

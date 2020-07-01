@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Alamofire
 
 struct CustomerRegistration: View {
     @EnvironmentObject var session: SessionStore
@@ -17,20 +18,62 @@ struct CustomerRegistration: View {
     @State var lastName: String
     @State var cardInfo: String
     
+    //add to view segue
+    @State var username: String
+    @State var hasVisaCard:  Bool
+    @State var phone: String
+    
+    
+    
     
     
     func signUp() {
-//        session.signUp(email: email, password: password) { (result,error) in
-//            self.email=""
-//            self.password=""
-//        }
+        //set username somewhere in UI!!!
+        self.username = "test name"
+        //set phone somewhere in UI!!!
+        self.phone = "11111111"
+        
+        
         if (self.cardInfo == ""){
-            print("user will NOT use card")
+            self.hasVisaCard = false
         }
         
+        let jsonRequest: [String: Any] = [ "user" : [
+            "username" : self.username,
+            "password" : self.password,
+            "userType" : "CUSTOMER",
+            ], "name" : self.firstName + self.lastName,
+               "email" : self.email,
+               "phone": self.phone,
+               "hasVisaCard" : self.hasVisaCard,
+                "cards" :  [ nil ],
+                "customerQueueRelations" : [ nil ]
+        ]
         
+        
+          AF.request("http://localhost:8080/registerCustomer", method: .post, parameters: jsonRequest, encoding: JSONEncoding.default)
+            .responseJSON { response in
+                print(response)
+                
+            }
         
     }
+    
+//        func signIn(){
+//            var testUser : [String: String] = [ "username" : self.email, "password" : self.password  ]
+//            let json: [String: Any] = ["username": self.email,
+//                                       "password": self.password]
+//
+//            //let jsonData = try? JSONSerialization.data(withJSONObject: json)
+//            AF.request("http://localhost:8080/login", method: .post, parameters: json, encoding: JSONEncoding.default)
+//            .responseJSON { response in
+//                print(response)
+//
+//            }
+//        }
+        
+        
+    
     func addVisaCard(){
         
     }

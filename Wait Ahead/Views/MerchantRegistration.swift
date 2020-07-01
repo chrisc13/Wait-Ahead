@@ -23,10 +23,10 @@ struct MerchantRegistration: View {
      
      
      func signUp() {
-         session.signUp(email: email, password: password) { (result,error) in
-             self.email=""
-             self.password=""
-         }
+//         session.signUp(email: email, password: password) { (result,error) in
+//             self.email=""
+//             self.password=""
+//         }
      }
      
          
