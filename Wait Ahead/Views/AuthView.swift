@@ -150,21 +150,7 @@ struct SignUpView: View {
     @State var error: String = ""
     @EnvironmentObject var session: SessionStore
     
-//    func signUp() {
-//        if (!isFormValid()){
-//            self.error = "Passwords do not match"
-//        }else{
-//            session.signUp(email: email, password: password) { (result,error) in
-//                if let error = error {
-//                    self.error = error.localizedDescription
-//                }else{
-//                    self.email=""
-//                    self.password=""
-//                }
-//            }
-//        }
-//    }
-//    
+
 //    
 //    
 //    

@@ -12,11 +12,13 @@ import UIKit
 
 
 final class MerchantAnnotation: NSObject, MKAnnotation {
+    let id: String
     let title: String?
     let coordinate: CLLocationCoordinate2D
 
     init(merchant: Merchant) {
+        self.id = merchant.id
         self.title = merchant.name
-        self.coordinate = merchant.coordinate
+        self.coordinate = merchant.location
     }
 }

@@ -19,10 +19,10 @@ struct ContentView: View {
     var body: some View{
         Group {
             if(session.session != nil){
-                HomeView()
+            HomeView()
             }else{
                 HomeView()
-                //AuthView()
+            //AuthView()
                 //MerchantHomeView()
             }
         }.onAppear(perform: getUser)
