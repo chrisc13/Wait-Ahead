@@ -12,8 +12,52 @@ import Alamofire
 
 struct HomeView: View {
     
+     @ObservedObject var locationManager = LocationManager()
     @State private var searchedStore: String = ""
     @State private var selection = 2
+    @State private var merchants: [Merchant] = [Merchant]()
+    
+    
+    
+    
+    func getMerchants(){
+        
+        var coor1 = "+37.79107180,-122.41925980"
+        var coor2 = "+37.79727180,-122.40555710"
+        var coor3 = "+37.79748379,-122.42186129"
+        
+        var coorArr = [coor1, coor2, coor3]
+        
+//        for _ in coorArr {
+//            Merchant(placemark: MKPlacemark)
+//        }
+        
+//        let locations = [
+//            Location(title: "New York, NY",    latitude: +37.79107180, longitude: -122.41925980),
+//            Location(title: "Los Angeles, CA", latitude: +37.79727180, longitude: -122.40555710),
+//            Location(title: "Chicago, IL",     latitude: +37.79748379, longitude: -122.42186129)
+//        ]
+//
+//        for location in locations {
+//            let annotation = MKPointAnnotation()
+//            annotation.title = location.title
+//            annotation.coordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
+//            mapView.addAnnotation(annotation)
+//        }
+    }
+    
+    
+//    func calculateOffset() -> CGFloat {
+//
+//        if self.merchants.count > 0 && !self.tapped {
+//            return UIScreen.main.bounds.size.height - UIScreen.main.bounds.size.height / 4
+//        }
+//        else if self.tapped {
+//            return 100
+//        } else {
+//            return UIScreen.main.bounds.size.height
+//        }
+//    }
     
     var body: some View {
         NavigationView {
@@ -28,9 +72,12 @@ struct HomeView: View {
                 
                 //map with search overlay view
                 ZStack{
+                    
+                    
+                    
                     //map
-                    MapView()
-                    .edgesIgnoringSafeArea(.top)
+                     MapView(merchants: merchants)
+                    //.edgesIgnoringSafeArea(.top)
                     
                     //search bar
                     HStack {
@@ -110,7 +157,13 @@ struct HomeView: View {
                            nc.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white]
                        })
         
-        
+        .navigationBarItems(trailing:
+            Button(action: {
+                self.getMerchants()
+            }) {
+                Text("Get Merchants")
+            }
+        )
         }
         .navigationViewStyle(StackNavigationViewStyle())
 
