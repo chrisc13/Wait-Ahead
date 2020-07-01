@@ -7,18 +7,21 @@
 //
 
 import SwiftUI
+import Alamofire
 
 struct MerchantRegistration: View {
     @EnvironmentObject var session: SessionStore
      
      @Binding var email: String
      @Binding var password: String
+     @State var username: String
+     @State var phone: String
      @State var merchantName: String
      @State var storeId: Int?
      @State var maxCapacity: Int?
      @State var maxAllowingCapacity: Int?
      @State var avgServiceTime: Int?
-     
+    @State var visaid: Int?
      
      
      
@@ -27,7 +30,39 @@ struct MerchantRegistration: View {
 //             self.email=""
 //             self.password=""
 //         }
-     }
+        
+        self.username = "Merchant"
+            //set phone somewhere in UI!!!
+            self.phone = "111"
+        self.visaid = 1234
+            
+            
+            
+            let jsonRequest: [String: Any] = [ "user" : [
+                "username" : self.username,
+                "password" : self.password,
+                "userType" : "MERCHANT",
+                ],"visaMerchantID": self.visaid,
+                 "merchantName" : self.merchantName,
+                 "latitute": [nil],
+                 "longituted":[nil],
+                 "visaStoreId":self.storeId,
+                 "maxStoreCapacity":self.maxCapacity,
+                 "maxAllowingCapacity":self.maxAllowingCapacity,
+                 "avgCustomerWaitTime":self.avgServiceTime,
+                 "merchantOfferRelations":[nil]
+                   
+                   
+            ]
+            
+            
+              AF.request("http://localhost:8080/registerMerchant", method: .post, parameters: jsonRequest, encoding: JSONEncoding.default)
+                .responseJSON { response in
+                    print(response)
+                    
+                }
+            
+        }
      
          
          var body: some View{
