@@ -27,7 +27,7 @@ struct HomeView: View {
     
     
     var body: some View {
-        NavigationView {
+       
             
             TabView(selection:$selection)  {
                 QueueView()
@@ -104,7 +104,7 @@ struct HomeView: View {
                 nc.navigationBar.backgroundColor = #colorLiteral(red: 0.102, green: 0.1216, blue: 0.4431, alpha: 1)
                 nc.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white]
             })
-        }
+        
         .navigationViewStyle(StackNavigationViewStyle())
         
     }

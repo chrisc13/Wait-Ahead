@@ -35,6 +35,7 @@
 		83C0836D24A6BAFE0040BFAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83C0836B24A6BAFE0040BFAB /* LaunchScreen.storyboard */; };
 		83C0837824A6BAFE0040BFAB /* Wait_AheadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C0837724A6BAFE0040BFAB /* Wait_AheadTests.swift */; };
 		83C0838324A6BAFE0040BFAB /* Wait_AheadUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C0838224A6BAFE0040BFAB /* Wait_AheadUITests.swift */; };
+		B766E48924AD3D52005262BE /* QueueStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B766E48824AD3D52005262BE /* QueueStruct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		83C0838224A6BAFE0040BFAB /* Wait_AheadUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wait_AheadUITests.swift; sourceTree = "<group>"; };
 		83C0838424A6BAFE0040BFAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B756CF306FE6079FC047A7DE /* Pods-Wait Ahead.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wait Ahead.debug.xcconfig"; path = "Target Support Files/Pods-Wait Ahead/Pods-Wait Ahead.debug.xcconfig"; sourceTree = "<group>"; };
+		B766E48824AD3D52005262BE /* QueueStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueStruct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 				8389249924AC1D9600B38D51 /* Customer.swift */,
 				8389249D24AC746A00B38D51 /* MerchantAnnotation.swift */,
 				8389249F24AC749700B38D51 /* Merchant.swift */,
+				B766E48824AD3D52005262BE /* QueueStruct.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				8389249324AC153900B38D51 /* MerchantHomeView.swift in Sources */,
 				2983C36224A6F57B00A7DA4A /* AuthView.swift in Sources */,
 				838924A424ACA18D00B38D51 /* MerchantDetailView.swift in Sources */,
+				B766E48924AD3D52005262BE /* QueueStruct.swift in Sources */,
 				83C0836124A6BAFC0040BFAB /* AppDelegate.swift in Sources */,
 				2983C35E24A6EAE500A7DA4A /* SessionStore.swift in Sources */,
 				83A0CBC624ABBA5400CEE2EC /* CustomerRegistration.swift in Sources */,
