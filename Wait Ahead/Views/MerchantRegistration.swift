@@ -20,7 +20,7 @@ struct MerchantRegistration: View {
      @State var storeId: String
      @State var maxCapacity: Int?
      @State var maxAllowingCapacity: Int?
-     @State var avgCustomerWaitTime: Float?
+     @State var avgCustomerWaitTime: Float? //remove this
     @State var visaid: String
      
      
@@ -117,7 +117,7 @@ struct MerchantRegistration: View {
                                  Text("Store Id:")
                                  Spacer()
                                  }
-                                 TextField("Enter Store Id", value: $storeId, formatter: NumberFormatter())
+                                 TextField("Enter Store Id", text: $storeId)
                                      .keyboardType(UIKeyboardType.decimalPad)
                                      .font(.system(size: 14))
                                      .padding(12)
