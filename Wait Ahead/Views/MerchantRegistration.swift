@@ -18,9 +18,8 @@ struct MerchantRegistration: View {
      //@State var phone: String
      @State var merchantName: String
      @State var storeId: String
-     @State var maxCapacity: Int?
-     @State var maxAllowingCapacity: Int?
-     @State var avgCustomerWaitTime: Float? //remove this
+     @State var maxCapacity: String
+     @State var maxAllowingCapacity: String
     @State var visaid: String
      
      
@@ -47,9 +46,9 @@ struct MerchantRegistration: View {
                  "latitute": [nil],
                  "longituted":[nil],
                  "visaStoreId":self.storeId,
-                 "maxStoreCapacity":self.maxCapacity,
-                 "maxAllowingCapacity":self.maxAllowingCapacity,
-                 "avgCustomerWaitTime":self.avgCustomerWaitTime,
+                 "maxStoreCapacity":Int(self.maxCapacity),
+                 "maxAllowingCapacity":Int(self.maxAllowingCapacity),
+               //  "avgCustomerWaitTime":Int(self.avgCustomerWaitTime),
                  "merchantOfferRelations":[nil]
                    
                    
@@ -90,7 +89,7 @@ struct MerchantRegistration: View {
                                  Text("Store Capacity:")
                                  Spacer()
                                  }
-                                 TextField("Enter Max Capacity", value: $maxCapacity, formatter: NumberFormatter())
+                                 TextField("Enter Max Capacity", text: $maxCapacity)
                                      .keyboardType(UIKeyboardType.decimalPad)
                                      .font(.system(size: 14))
                                      .padding(12)
@@ -104,15 +103,16 @@ struct MerchantRegistration: View {
 //                                     .font(.system(size: 14))
 //                                     .padding(12)
 //                                     .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color.gray,lineWidth: 1))
-                                HStack{
+                                //HStack{
+                                    /*
                                  Text("Avergage Service Time per Customer:")
                                  Spacer()
                                  }
-                                 TextField("Enter Avergage Service Time per Customer:", value: $avgCustomerWaitTime, formatter: NumberFormatter())
+                                 TextField("Enter Avergage Service Time per Customer:", text:  $avgCustomerWaitTime)
                                      .keyboardType(UIKeyboardType.decimalPad)
                                      .font(.system(size: 14))
                                      .padding(12)
-                                     .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color.gray,lineWidth: 1))
+                                     .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color.gray,lineWidth: 1))*/
                                  HStack{
                                  Text("Store Id:")
                                  Spacer()
