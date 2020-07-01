@@ -37,6 +37,23 @@ class MerchantLocatorResponse: Mappable {
     }
 }
 
+class MerchantLocatorListsResponse: Mappable {
+    
+    var lstMerchant : [MerchantLocatorResponse]?
+
+    
+    
+    required public init?(map: Map) {
+
+    }
+    public func mapping(map: Map) {
+        
+        lstMerchant    <- map["lstMerchant"]
+        
+    }
+}
+
+
 struct MapView: UIViewRepresentable {
   
     
@@ -46,13 +63,13 @@ struct MapView: UIViewRepresentable {
     func makeUIView(context: Context) -> MKMapView {
         
        AF.request("http://localhost:8080/locateAllMerchant/"+"37.725025/-122.461593")
-        .responseObject{ (response: DataResponse<MerchantLocatorResponse,AFError>) in
+        .responseObject{ (response: DataResponse<MerchantLocatorListsResponse,AFError>) in
             print("hiiiii")
             
             switch response.result {
             case.success( let value):
                 print(value.toJSONString())
-                print(value.latitude)
+                print(value.lstMerchant)
                
             case.failure(let error):
                 print(error)
