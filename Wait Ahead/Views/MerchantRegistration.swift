@@ -14,14 +14,14 @@ struct MerchantRegistration: View {
      
      @Binding var email: String
      @Binding var password: String
-     @State var username: String
-     @State var phone: String
+     //@State var username: String
+     //@State var phone: String
      @State var merchantName: String
-     @State var storeId: Int?
+     @State var storeId: String
      @State var maxCapacity: Int?
      @State var maxAllowingCapacity: Int?
-     @State var avgServiceTime: Int?
-    @State var visaid: Int?
+     @State var avgCustomerWaitTime: Float?
+    @State var visaid: String
      
      
      
@@ -31,15 +31,15 @@ struct MerchantRegistration: View {
 //             self.password=""
 //         }
         
-        self.username = "Merchant"
+        //self.username = "Merchant"
             //set phone somewhere in UI!!!
-            self.phone = "111"
-        self.visaid = 1234
+            //self.phone = "111"
+        self.visaid = "1234"
             
             
             
             let jsonRequest: [String: Any] = [ "user" : [
-                "username" : self.username,
+                "username" : "m1",
                 "password" : self.password,
                 "userType" : "MERCHANT",
                 ],"visaMerchantID": self.visaid,
@@ -49,11 +49,14 @@ struct MerchantRegistration: View {
                  "visaStoreId":self.storeId,
                  "maxStoreCapacity":self.maxCapacity,
                  "maxAllowingCapacity":self.maxAllowingCapacity,
-                 "avgCustomerWaitTime":self.avgServiceTime,
+                 "avgCustomerWaitTime":self.avgCustomerWaitTime,
                  "merchantOfferRelations":[nil]
                    
                    
             ]
+        
+        print("here is my data! ")
+        print(jsonRequest.description)
             
             
               AF.request("http://localhost:8080/registerMerchant", method: .post, parameters: jsonRequest, encoding: JSONEncoding.default)
@@ -105,7 +108,7 @@ struct MerchantRegistration: View {
                                  Text("Avergage Service Time per Customer:")
                                  Spacer()
                                  }
-                                 TextField("Enter Avergage Service Time per Customer:", value: $avgServiceTime, formatter: NumberFormatter())
+                                 TextField("Enter Avergage Service Time per Customer:", value: $avgCustomerWaitTime, formatter: NumberFormatter())
                                      .keyboardType(UIKeyboardType.decimalPad)
                                      .font(.system(size: 14))
                                      .padding(12)

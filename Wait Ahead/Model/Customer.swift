@@ -55,27 +55,27 @@ class Card{
     }
 }
 
-class customerLoginResponse: Decodable {
-    var response: String
-    var message: String
-    var userProfile: UserProfile
-
-}
-
-class UserProfile: Decodable{
-    var id : Int
-    var user: User
-
-
-    init(json: [String : Any] ) {
-        <#statements#>
-    }
-
-}
-
-class User: Decodable{
-    var id : Int
-    var username : String
-    var password: String
-
-}
+//class customerLoginResponse: Decodable {
+//    var response: String
+//    var message: String
+//    var userProfile: UserProfile
+//
+//}
+//
+//class UserProfile: Decodable{
+//    var id : Int
+//    var user: User
+//
+//
+//    init(json: [String : Any] ) {
+//        <#statements#>
+//    }
+//
+//}
+//
+//class User: Decodable{
+//    var id : Int
+//    var username : String
+//    var password: String
+//
+//}

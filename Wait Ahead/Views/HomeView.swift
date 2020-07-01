@@ -8,6 +8,7 @@
 
 import SwiftUI
 import MapKit
+import Alamofire
 
 struct HomeView: View {
     
@@ -116,6 +117,15 @@ struct HomeView: View {
     }
 
     init() {
+       //get location
+        
+        // http://localhost:8080/locateAllMerchant/"37.725025"/"-122.461593"
+        
+        
+
+           //let jsonData = try? JSONSerialization.data(withJSONObject: json)
+ 
+        
         UITabBar.appearance().isTranslucent = true
                    UITabBar.appearance().barTintColor = #colorLiteral(red: 0.102, green: 0.1216, blue: 0.4431, alpha: 1)
     }

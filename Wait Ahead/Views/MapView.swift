@@ -8,18 +8,74 @@
 
 import SwiftUI
 import MapKit
+import AlamofireObjectMapper
+import Alamofire
+import ObjectMapper
+
+class MerchantLocatorResponse: Mappable {
+    //var avgCustomerWaitTime : Float?
+    //var id : Int;
+    var latitude : String?
+    var longitude : String?
+    //var maxAllowingCapacity : Int;
+    //var maxStoreCapacity : String;
+    //var merchantCategoryCode : String?
+    //var merchantName : String?
+    //var merchantOfferRelations : String?
+    //var user : String?
+    //var visaMerchantId : Any?
+    //var visaStoreId : Any?
+    
+    
+    required public init?(map: Map) {
+
+    }
+    public func mapping(map: Map) {
+        
+        latitude    <- map["latitude"]
+        longitude    <- map["longitude"]
+    }
+}
 
 struct MapView: UIViewRepresentable {
+  
+    
     
     private var locationManager = LocationManager()
     
     func makeUIView(context: Context) -> MKMapView {
-       
+        
+       AF.request("http://localhost:8080/locateAllMerchant/"+"37.725025/-122.461593")
+        .responseObject{ (response: DataResponse<MerchantLocatorResponse,AFError>) in
+            print("hiiiii")
+            
+            switch response.result {
+            case.success( let value):
+                print(value.toJSONString())
+                print(value.latitude)
+               
+            case.failure(let error):
+                print(error)
+               
+            }
+        
+            
+//            do{ let weatherResponse = try? response.result.get()
+//                print(response.result.value)
+//                print(weatherResponse!.latitude)
+//            }
+//            catch {
+//                print("JSONSerialization error:", error)
+//            }
+        }
         
         
         let map = MKMapView()
         map.showsUserLocation = true
         map.delegate = context.coordinator
+        
+        
+        
         return map
         
     }

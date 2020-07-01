@@ -44,17 +44,6 @@ struct SignInView: View {
         AF.request("http://localhost:8080/login", method: .post, parameters: json, encoding: JSONEncoding.default)
         .responseJSON { response in
             print(response)
-        //}
-        // Set HTTP Request Body
-        //request.httpBody = jsonData;
-
-        //let task = URLSession.shared.dataTask(with: request) { data, response, error in
-
-          //guard let data = data, error == nil else { return }
-
-            
-          //print(NSString(data: data, encoding: String.Encoding.utf8.rawValue))
-        //}
         }
         //task.resume();
     }
@@ -256,7 +245,7 @@ struct SignUpView: View {
                 
                 
                 //Missing arguments for parameters 'isMerchant', 'merchantId', 'storeId', 'maxCapacity', 'maxAllowingCpapacity', 'avgServiceTime' in call
-                NavigationLink(destination: MerchantRegistration(email: self.$email, password: self.$password, merchantName: "", storeId: nil, maxCapacity: nil, maxAllowingCapacity: nil, avgServiceTime: nil ) ) {
+                NavigationLink(destination: MerchantRegistration(email: self.$email, password: self.$password, merchantName: "", storeId: "", maxCapacity: nil, maxAllowingCapacity: nil, avgCustomerWaitTime: nil, visaid: "" ) ) {
                           Text("Register as Merchant").frame(minWidth: 0, maxWidth: .infinity)
                            .frame(height: 50).foregroundColor(.white)
                            .background(Color.init(UIColor(hue: 0, saturation: 0, brightness: 0.33, alpha: 1.0) ))

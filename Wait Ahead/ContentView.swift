@@ -21,7 +21,8 @@ struct ContentView: View {
             if(session.session != nil){
                 HomeView()
             }else{
-                AuthView()
+                HomeView()
+                //AuthView()
                 //MerchantHomeView()
             }
         }.onAppear(perform: getUser)

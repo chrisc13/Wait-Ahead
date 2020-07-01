@@ -49,6 +49,8 @@ struct CustomerRegistration: View {
                 "cards" :  [ nil ],
                 "customerQueueRelations" : [ nil ]
         ]
+        print("here is my data! ")
+              print(jsonRequest.description)
         
         
           AF.request("http://localhost:8080/registerCustomer", method: .post, parameters: jsonRequest, encoding: JSONEncoding.default)

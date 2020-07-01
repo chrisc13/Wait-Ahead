@@ -1,5 +1,8 @@
 PODS:
-  - Alamofire (5.2.1)
+  - Alamofire (5.0.0-rc.2)
+  - AlamofireObjectMapper (6.2.0):
+    - Alamofire (= 5.0.0-rc.2)
+    - ObjectMapper (~> 3.5.1)
   - Firebase/Analytics (6.27.0):
     - Firebase/Core
   - Firebase/Auth (6.27.0):
@@ -73,16 +76,20 @@ PODS:
     - nanopb/encode (= 1.30905.0)
   - nanopb/decode (1.30905.0)
   - nanopb/encode (1.30905.0)
+  - ObjectMapper (3.5.3)
   - PromisesObjC (1.2.9)
 
 DEPENDENCIES:
-  - Alamofire (~> 5.2)
+  - Alamofire (~> 5.0.0-rc.2)
+  - AlamofireObjectMapper (~> 6.2)
   - Firebase/Analytics
   - Firebase/Auth
+  - ObjectMapper (~> 3.5.1)
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - AlamofireObjectMapper
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -95,10 +102,12 @@ SPEC REPOS:
     - GoogleUtilities
     - GTMSessionFetcher
     - nanopb
+    - ObjectMapper
     - PromisesObjC
 
 SPEC CHECKSUMS:
-  Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
+  Alamofire: f9450d3c7f6bea2ad62e7a541c3e9b186c7991d6
+  AlamofireObjectMapper: 74d1440c92c42bbcc2b5f4dc81654ac095ec669f
   Firebase: fc4cbf6f1592636431821ef9a3c557e4dfd9f268
   FirebaseAnalytics: 0ea640473474f036cabbc2576e20c2d63671c92f
   FirebaseAuth: b85c064e0ac60f82486728d50a4803f235687302
@@ -111,8 +120,9 @@ SPEC CHECKSUMS:
   GoogleUtilities: 39530bc0ad980530298e9c4af8549e991fd033b1
   GTMSessionFetcher: 6f5c8abbab8a9bce4bb3f057e317728ec6182b10
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
+  ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
   PromisesObjC: b48e0338dbbac2207e611750777895f7a5811b75
 
-PODFILE CHECKSUM: 1d534255d5acb03bca439e43974a35d8a3bd066c
+PODFILE CHECKSUM: 62ed9734c1addfabf2fd9e810d71e9e2300f22ba
 
 COCOAPODS: 1.9.3
