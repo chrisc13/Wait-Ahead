@@ -10,10 +10,11 @@ import SwiftUI
 import MapKit
 import Alamofire
 import ObjectMapper
+import SwiftyJSON
 
 struct HomeView: View {
     
-    @State var merchants: [Merchant]
+    @State var merchants :  [Merchant]
         = [
             Merchant(id: "1", name: "Target", location: .init(latitude: +37.79107180, longitude: -122.41925980)),
             Merchant(id: "2", name: "Walmart", location: .init(latitude: +37.79727180, longitude: -122.40555710)),
@@ -108,43 +109,68 @@ struct HomeView: View {
         .navigationViewStyle(StackNavigationViewStyle())
         
     }
-    
-    init(merchants: [Merchant]) {
-        self._merchants = State(wrappedValue: merchants)
-        
-    }
-    
     init() {
-        
-        //try adding more annotation here
-        //        let n = Merchant(id: "2", name: "Store 2", location: .init(latitude: +37.79727180, longitude: -122.40555710))
-        //        self.merchants.append(n)
-        
-        
-        //fire request
-//          AF.request("http://localhost:8080/locateAllMerchant/"+"37.725025/-122.461593")
-//                .responseObject{ (response: DataResponse<MerchantLocatorResponse,AFError>) in
-//                    print("hiiiii")
-//        
-//                    switch response.result {
-//                    case.success( let value):
-//                        print(value.toJSONString())
-//                        print(value.latitude)
-//        
-//                    case.failure(let error):
-//                        print(error)
-//        
-//                    }
-//        
-//            }
+         print("****before sign in() CALL ****")
+        apiSignIn()
+          print("****after sign in() CALL****")
+        //getMerchants()
         
         
         
         UITabBar.appearance().isTranslucent = true
         UITabBar.appearance().barTintColor = #colorLiteral(red: 0.102, green: 0.1216, blue: 0.4431, alpha: 1)
     }
+    init(merchants: [Merchant]) {
+        self._merchants = State(wrappedValue: merchants)
+        
+    }
     
+//    func getMerchants(){
+//        guard let url = URL(string: "http://www.stackoverflow.com") else { return }
+//
+//        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+//
+//            guard let data = data, error == nil else { return }
+//
+//            print(NSString(data: data, encoding: String.Encoding.utf8.rawValue))
+//        }
+//        task.resume()
+//
+//    }
+    
+    func apiSignIn(){
+//        print(self.password)
+         print("****sign in ****")
+         print("****before resume****")
+        
+        guard let url = URL(string: "https://jsonplaceholder.typicode.com/todos/1") else { return }
+        
+        
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            
+//            guard let data = data, error == nil else { return }
+//            let decoder = JSONDecoder()
+            
+            
+     
+        }
+        task.resume()
+        print("****after resume****")
+    }
 }
+
+ struct JsonRes {
+     var userId : Int
+     var id: Int
+     var title: String
+    var completed: Bool
+ }
+
+
+
+//struct merchant
+
+
 class MerchantLocatorResponse: Mappable {
     //var avgCustomerWaitTime : Float?
     //var id : Int;
@@ -204,7 +230,7 @@ struct MerchantCard: View {
                            
                             Text(merchant.name)
                             .font(.custom("HelveticaNeue-Medium", size: 20))
-                            Text("Wait Time:")
+                            Text("Wait Time:  20 minutes")
                                 .multilineTextAlignment(.center)
                             .font(.custom("HelveticaNeue-Medium", size: 14))
                             .foregroundColor(Color.gray)

@@ -11,6 +11,7 @@ import SwiftUI
 struct ProfileView: View {
     
     @EnvironmentObject var session: SessionStore
+     @State var customer : Customer = Customer(id: 1, username: "Sonia", password: "", name: "Sonia", email: "sonia@email.com", phone: "800-234-5678", hasVisaCard: false)
     
     var body: some View {
         VStack{
@@ -24,14 +25,14 @@ struct ProfileView: View {
                     
                     Text("Profile Page").font(.system(size:30)).bold().foregroundColor(.black)
                   
-                    Text("User Name fetch from database").font(.system(size:18)).bold().foregroundColor(.black)
+                    Text(customer.name).font(.system(size:18)).bold().foregroundColor(.black)
                     HStack{
                         Image(systemName: "envelope.badge.fill")
-                    Text("Email fetch from database").font(.system(size:18)).bold().foregroundColor(.black)
+                        Text(customer.email).font(.system(size:18)).bold().foregroundColor(.black)
                     }
                     HStack{
                     Image(systemName: "phone.fill")
-                    Text("Phone Number fetch from database").font(.system(size:18)).bold().foregroundColor(.black)
+                        Text(customer.phone).font(.system(size:18)).bold().foregroundColor(.black)
                     }
             }
         

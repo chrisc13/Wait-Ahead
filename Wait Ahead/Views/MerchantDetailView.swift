@@ -19,6 +19,7 @@ struct MerchantDetailView: View {
     
     var body: some View {
         //Text(self.storeName)
+        
         VStack{
             Text(merchant.name)
             .font(.custom("HelveticaNeue-Medium", size: 30))

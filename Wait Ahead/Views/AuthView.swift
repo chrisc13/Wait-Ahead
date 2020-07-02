@@ -46,9 +46,13 @@ struct SignInView: View {
         AF.request("http://localhost:8080/login", method: .post, parameters: json, encoding: JSONEncoding.default)
         .responseJSON { response in
             switch response.result{
+                
+                
             case.success(let value):
                 let login_json = JSON(value)
                 print(login_json["responseStatus"].description)
+                
+                
                 if(login_json["responseStatus"] == "SUCCESS"){
                     
                     UserDefaults.standard.set(true, forKey: "logged_in")
@@ -56,10 +60,10 @@ struct SignInView: View {
                     
                     
                 }
-            else{
-                    self.error = json["message"] as! String
-                        UserDefaults.standard.set(false, forKey: "logged_in")
-                    }
+//            else{
+//                    self.error = json["message"] as! String
+//                        UserDefaults.standard.set(false, forKey: "logged_in")
+//                    }
                 
             case.failure(let error):
                 self.error = error.errorDescription!
@@ -109,10 +113,10 @@ struct SignInView: View {
                             Spacer()
                             VStack(spacing: 10){
                                 HStack{
-                                Text("Email:")
+                                Text("Username:")
                                 Spacer()
                                 }
-                                TextField("Enter Email Address", text: $email)
+                                TextField("Enter Username", text: $email)
                                     .font(.system(size: 14))
                                     .padding(12)
                                     .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color.gray,lineWidth: 1))
@@ -208,10 +212,10 @@ struct SignUpView: View {
                         Spacer()
                         VStack(spacing: 10){
                             HStack{
-                            Text("Email:")
+                            Text("Username:")
                             Spacer()
                             }
-                            TextField("Enter an Email Address", text: $email)
+                            TextField("Enter Username:", text: $email)
                                 .font(.system(size: 14))
                                 .padding(12)
                                 .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color.gray,lineWidth: 1))
