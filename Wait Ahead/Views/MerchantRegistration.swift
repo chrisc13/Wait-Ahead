@@ -20,7 +20,7 @@ struct MerchantRegistration: View {
      @State var storeId: String
      @State var maxCapacity: String
      @State var maxAllowingCapacity: String
-    @State var visaid: String
+     @State var visaid: String
      
      
      
@@ -34,8 +34,6 @@ struct MerchantRegistration: View {
             //set phone somewhere in UI!!!
             //self.phone = "111"
         self.visaid = "1234"
-            
-            
             
             let jsonRequest: [String: Any] = [ "user" : [
                 "username" : "m1",

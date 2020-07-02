@@ -15,13 +15,13 @@ import Foundation
 //customer.card = card
 
 class Customer{
-    var id : Int?
-    var username : String?
-    var password: String?
-    var name: String?
-    var email: String?
-    var phone: String?
-    var hasVisaCard: Bool?
+    var id : Int
+    var username : String
+    var password: String
+    var name: String
+    var email: String
+    var phone: String
+    var hasVisaCard: Bool
     var card : Card?
     
     init(id: Int, username: String, password: String, name: String, email: String, phone: String, hasVisaCard: Bool ) {
